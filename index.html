@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Clarify — Brand Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* ─── TOKENS ───────────────────────────────────────── */
+:root {
+  /* Clarify Green — THE primary brand color */
+  --green-900: #0d3d2e;
+  --green-800: #115238;
+  --green-700: #176b48;
+  --green-600: #1a7a52;
+  --green-500: #1e8f5e;   /* primary CTA green */
+  --green-400: #25a96f;
+  --green-300: #4fc493;
+  --green-200: #a3e4c8;
+  --green-100: #d6f4e8;
+  --green-50:  #edfaf4;
+
+  /* Neutrals */
+  --ink:       #1a2e2a;   /* dark teal-charcoal — not pure black */
+  --ink-2:     #4a6660;   /* body / secondary text */
+  --ink-3:     #8aa8a0;   /* muted / placeholder */
+  --ink-4:     #b8d0ca;   /* dividers, disabled */
+
+  /* Surfaces & Backgrounds */
+  --white:        #ffffff;
+  --bg-sky:       #e8f0f7;   /* top hero — light blue sky */
+  --bg-cream:     #f5ece2;   /* warm cream mid sections */
+  --bg-peach:     #f0e4d8;   /* deeper warm peach */
+  --bg-sand:      #ede3d8;   /* sand blob / oval bg */
+  --bg-blush:     #f7ede5;   /* soft blush testimonial */
+  --bg-sage:      #e8f2ee;   /* very light sage tint */
+  --bg-mint:      #e0f5ec;   /* mint feature bg */
+
+  /* Typography */
+  --font: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Gradients — key to Clarify's look */
+  --grad-hero:    linear-gradient(180deg, #deeaf5 0%, #e8f0ec 35%, #f0e8e0 70%, #f0e4d8 100%);
+  --grad-rep:     linear-gradient(160deg, #c8eed8 0%, #e0f5ea 40%, #d4eee4 100%);
+  --grad-warm:    linear-gradient(180deg, #f5ece2 0%, #f0e4d8 100%);
+  --grad-blue:    linear-gradient(180deg, #deeaf5 0%, #e8f0ec 100%);
+
+  /* Borders */
+  --b-light:  #e2ece9;
+  --b-medium: #c8ddd8;
+  --b-green:  #a3e4c8;
+
+  /* Spacing */
+  --sp-xs: 4px; --sp-sm: 8px; --sp-md: 16px; --sp-lg: 24px;
+  --sp-xl: 32px; --sp-2xl: 48px; --sp-3xl: 72px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ─── SIDEBAR ─────────────────────────────────────── */
+.sidebar{
+  position:fixed;top:0;left:0;width:224px;height:100vh;
+  background:var(--green-900);
+  overflow-y:auto;z-index:100;
+  display:flex;flex-direction:column;
+  padding:32px 24px 40px;
+}
+.sb-logo{
+  display:flex;align-items:center;gap:8px;
+  font-size:20px;font-weight:700;color:#fff;
+  letter-spacing:-0.03em;line-height:1;
+  margin-bottom:4px;
+}
+.sb-logo-icon{
+  width:28px;height:28px;border-radius:8px;
+  background:linear-gradient(135deg,var(--green-400),var(--green-600));
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+}
+.sb-sub{
+  font-size:10px;font-weight:500;
+  color:rgba(255,255,255,0.4);
+  text-transform:uppercase;letter-spacing:0.1em;
+  margin-bottom:28px;margin-left:36px;
+}
+.sidebar nav a{
+  display:block;font-size:13px;font-weight:400;
+  color:rgba(255,255,255,0.45);
+  text-decoration:none;padding:5px 0;
+  transition:color 0.15s;
+}
+.sidebar nav a:hover{color:#fff}
+.sb-meta{
+  font-size:10px;font-weight:500;
+  color:rgba(255,255,255,0.2);
+  text-transform:uppercase;letter-spacing:0.08em;
+  line-height:1.6;margin-top:auto;padding-top:32px;
+}
+
+/* ─── MAIN ───────────────────────────────────────── */
+.main{margin-left:224px}
+
+/* ─── HERO ───────────────────────────────────────── */
+.hero{
+  background:var(--grad-hero);
+  padding:96px 80px 80px;
+  position:relative;overflow:hidden;
+}
+.hero-announce{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:500;color:var(--ink-2);
+  background:rgba(255,255,255,0.7);
+  border:1px solid rgba(255,255,255,0.9);
+  border-radius:100px;padding:6px 16px;
+  margin-bottom:32px;
+}
+.hero-announce .arr{color:var(--green-500)}
+.hero h1{
+  font-size:clamp(52px,5.5vw,84px);
+  font-weight:800;color:var(--ink);
+  line-height:1.05;letter-spacing:-0.04em;
+  max-width:740px;margin-bottom:24px;
+}
+.hero p{
+  font-size:20px;font-weight:400;
+  color:var(--ink-2);max-width:560px;
+  line-height:1.6;letter-spacing:-0.01em;
+  margin-bottom:36px;
+}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-600);color:#fff;
+  font-family:var(--font);font-size:16px;font-weight:600;
+  padding:14px 28px;border-radius:100px;border:none;
+  cursor:pointer;letter-spacing:-0.02em;
+  transition:background 0.15s;text-decoration:none;
+}
+.hero-btn:hover{background:var(--green-800)}
+
+/* Ticker bar */
+.ticker-bar{
+  display:flex;gap:32px;align-items:center;
+  margin-top:48px;
+  font-size:13px;font-weight:500;color:var(--ink-3);
+}
+.ticker-dot{width:8px;height:8px;border-radius:50%;background:var(--ink-4)}
+.ticker-dot.active{background:var(--green-400)}
+
+/* ─── SECTION ────────────────────────────────────── */
+.section{
+  padding:var(--sp-3xl) 80px;
+  border-bottom:1px solid var(--b-light);
+  max-width:1280px;
+}
+.sec-hdr{display:flex;align-items:baseline;gap:14px;margin-bottom:48px}
+.sec-num{font-size:12px;font-weight:600;color:var(--green-500);text-transform:uppercase;letter-spacing:0.1em}
+.sec-title{font-size:48px;font-weight:800;letter-spacing:-0.04em;color:var(--ink);line-height:1}
+.sub-label{
+  font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--ink-3);margin-bottom:20px;
+}
+.copy-desc{font-size:16px;color:var(--ink-2);line-height:1.7;max-width:680px;margin-bottom:32px}
+
+/* ─── SWATCHES ───────────────────────────────────── */
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:2px;margin-bottom:40px}
+.swatch{border-radius:6px;overflow:hidden;border:1px solid var(--b-light)}
+.swatch-color{height:88px}
+.swatch-info{padding:12px 14px;background:var(--white)}
+.swatch-name{font-size:11px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:0.05em}
+.swatch-hex{font-size:12px;font-weight:500;color:var(--ink-2);margin-top:2px;font-variant-numeric:tabular-nums}
+.swatch-use{font-size:11px;color:var(--ink-3);margin-top:4px;line-height:1.4}
+
+/* ─── CODE ───────────────────────────────────────── */
+.code-block{
+  background:#0d1f1b;border-radius:10px;
+  padding:28px 32px;font-family:'SF Mono','Fira Code',monospace;
+  font-size:13px;line-height:1.75;color:#d4ede6;
+  overflow-x:auto;margin-bottom:32px;
+}
+.code-block pre{white-space:pre}
+.c{color:#4a6e60}.k{color:var(--green-300)}.v{color:#7eddb8}.s{color:#f0c070}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────── */
+.type-row{display:grid;grid-template-columns:180px 1fr;border:1px solid var(--b-light);margin-bottom:-1px}
+.type-meta{padding:24px 20px;border-right:1px solid var(--b-light);background:var(--bg-sage)}
+.type-meta-name{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.type-meta-fam{font-size:11px;font-weight:600;color:var(--green-500);margin-bottom:8px}
+.type-meta-spec{font-size:11px;color:var(--ink-3);line-height:1.6}
+.type-preview{padding:24px 32px;display:flex;align-items:center;background:var(--white)}
+
+/* ─── BUTTONS ────────────────────────────────────── */
+.btn-p{display:inline-flex;align-items:center;gap:6px;background:var(--green-600);color:#fff;font-family:var(--font);font-size:14px;font-weight:600;padding:10px 22px;border-radius:100px;border:none;cursor:pointer;letter-spacing:-0.02em;transition:background 0.15s;text-decoration:none}
+.btn-p:hover{background:var(--green-800)}
+.btn-p-lg{font-size:16px;padding:14px 28px}
+.btn-s{display:inline-flex;align-items:center;gap:6px;background:var(--white);color:var(--ink);font-family:var(--font);font-size:14px;font-weight:600;padding:10px 20px;border-radius:100px;border:1px solid var(--b-medium);cursor:pointer;letter-spacing:-0.02em;transition:background 0.15s;text-decoration:none}
+.btn-s:hover{background:var(--bg-sage)}
+.btn-g{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--green-600);font-family:var(--font);font-size:14px;font-weight:600;padding:10px 16px;border-radius:100px;border:none;cursor:pointer;letter-spacing:-0.02em;transition:background 0.15s;text-decoration:none}
+.btn-g:hover{background:var(--green-50)}
+.btn-sm{font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px;letter-spacing:-0.01em}
+
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:32px;border:1px solid var(--b-light);border-radius:12px;margin-bottom:16px;background:var(--white)}
+.btn-row-dark{background:var(--green-900)}
+.btn-row-dark .btn-s{background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.15)}
+.btn-row-dark .btn-g{color:var(--green-300)}
+.btn-row-dark .btn-g:hover{background:rgba(255,255,255,0.08)}
+.btn-row-grad{background:var(--grad-rep)}
+
+/* ─── PILLS ──────────────────────────────────────── */
+.pill{display:inline-flex;align-items:center;font-size:12px;font-weight:600;padding:5px 12px;border-radius:100px;border:1px solid;letter-spacing:-0.01em}
+.pill-g{background:var(--green-50);border-color:var(--green-200);color:var(--green-700)}
+.pill-dk{background:var(--green-900);border-color:var(--green-700);color:var(--green-200)}
+.pill-warm{background:#fef3e8;border-color:#f5d9b8;color:#a06030}
+.pill-blue{background:#e8f0f8;border-color:#b8d0e8;color:#2a5080}
+.pill-ink{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* ─── CARDS ──────────────────────────────────────── */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.card{border:1px solid var(--b-light);border-radius:16px;padding:28px;background:var(--white)}
+.card-grad{background:var(--grad-rep);border-color:var(--b-green)}
+.card-warm{background:var(--grad-warm);border-color:#e8d8cc}
+.card-dk{background:var(--green-900);border-color:var(--green-700)}
+.card-tag{margin-bottom:16px}
+.card h3{font-size:22px;font-weight:700;letter-spacing:-0.03em;margin-bottom:10px;line-height:1.2;color:var(--ink)}
+.card-dk h3{color:#fff}
+.card-grad h3{color:var(--green-900)}
+.card p{font-size:14px;color:var(--ink-2);line-height:1.6}
+.card-dk p{color:rgba(255,255,255,0.6)}
+.card-grad p{color:var(--green-800)}
+
+/* ─── INPUTS ─────────────────────────────────────── */
+.input-label{font-size:12px;font-weight:600;color:var(--ink-2);margin-bottom:6px;display:block;letter-spacing:-0.01em}
+.input-field{width:100%;max-width:400px;padding:10px 14px;border:1px solid var(--b-medium);border-radius:10px;font-family:var(--font);font-size:14px;color:var(--ink);background:var(--white);outline:none;transition:border-color 0.15s,box-shadow 0.15s;margin-bottom:4px}
+.input-field::placeholder{color:var(--ink-3)}
+.input-field:focus{border-color:var(--green-500);box-shadow:0 0 0 3px var(--green-100)}
+.input-hint{font-size:12px;color:var(--ink-3);margin-bottom:20px}
+
+/* ─── TABLE ──────────────────────────────────────── */
+.data-table{width:100%;border-collapse:collapse;border:1px solid var(--b-light);border-radius:12px;overflow:hidden;font-size:14px}
+.data-table thead{background:var(--bg-sage)}
+.data-table th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-3);padding:12px 16px;text-align:left;border-bottom:1px solid var(--b-light)}
+.data-table td{padding:13px 16px;border-bottom:1px solid var(--b-light);color:var(--ink)}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:var(--green-50)}
+.lc{color:var(--green-600);font-weight:600}
+.pos{color:#1a8a50;font-weight:600}
+.neg{color:#c04040;font-weight:600}
+
+/* ─── SPACING VIZ ─────────────────────────────────── */
+.spacing-row{display:flex;align-items:flex-end;gap:24px;margin-bottom:32px}
+.spacing-item{display:flex;flex-direction:column;align-items:center;gap:8px}
+.spacing-bar{background:var(--green-200);border-radius:2px;width:32px}
+.spacing-label{font-size:11px;font-weight:600;color:var(--ink-3);text-align:center;text-transform:uppercase;letter-spacing:0.05em}
+
+/* ─── CONTAINERS ─────────────────────────────────── */
+.c-demo{border:1px solid var(--b-light);border-radius:16px;overflow:hidden;margin-bottom:16px}
+.c-inner{padding:64px;text-align:center}
+.c-tag{display:inline-flex;font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;border:1px solid;margin-bottom:24px;letter-spacing:-0.01em}
+.c-inner h2{font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:16px}
+.c-inner p{font-size:16px;line-height:1.6;max-width:480px;margin:0 auto 28px;color:var(--ink-2)}
+.c-btns{display:flex;gap:12px;justify-content:center}
+
+/* Light */
+.c-light .c-inner{background:#fff}
+.c-light .c-tag{background:var(--green-50);border-color:var(--green-200);color:var(--green-700)}
+.c-light .c-inner h2{color:var(--ink)}
+
+/* Sky gradient */
+.c-sky .c-inner{background:var(--grad-blue)}
+.c-sky .c-tag{background:rgba(255,255,255,0.7);border-color:#b8d0e8;color:#2a5080}
+.c-sky .c-inner h2{color:var(--ink)}
+
+/* Rep green gradient */
+.c-rep .c-inner{background:var(--grad-rep)}
+.c-rep .c-tag{background:rgba(255,255,255,0.6);border-color:var(--green-200);color:var(--green-700)}
+.c-rep .c-inner h2{color:var(--green-900)}
+.c-rep .c-inner p{color:var(--green-800)}
+
+/* Warm */
+.c-warm .c-inner{background:var(--grad-warm)}
+.c-warm .c-tag{background:#fef3e8;border-color:#f5d9b8;color:#a06030}
+.c-warm .c-inner h2{color:var(--ink)}
+
+/* Dark */
+.c-dark .c-inner{background:var(--green-900)}
+.c-dark .c-tag{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--green-300)}
+.c-dark .c-inner h2{color:#fff}
+.c-dark .c-inner p{color:rgba(255,255,255,0.6)}
+.c-dark .btn-s{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.2)}
+
+/* ─── DATA VIZ ────────────────────────────────────── */
+.chart-frame{border:1px solid var(--b-light);border-radius:12px;overflow:hidden;margin-bottom:24px;background:#fff}
+.chart-hdr{padding:20px 24px 0}
+.chart-title{font-size:22px;font-weight:700;letter-spacing:-0.03em;color:var(--ink);margin-bottom:4px}
+.chart-sub{font-size:12px;font-weight:500;color:var(--ink-3);margin-bottom:20px}
+.chart-body{padding:0 24px 24px}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:160px;border-bottom:1px solid var(--b-light);padding:12px 0 0;margin-bottom:8px}
+.bar-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+.bar{width:100%;border-radius:4px 4px 0 0;background:var(--green-100)}
+.bar.accent{background:var(--green-500)}
+.bar-label{font-size:10px;font-weight:600;color:var(--ink-3);text-align:center;white-space:nowrap}
+.pipeline-steps{display:flex;gap:4px;margin:16px 0}
+.pipe-step{flex:1;background:var(--green-50);border-radius:8px;padding:12px}
+.pipe-step.active{background:var(--green-500)}
+.pipe-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--green-600)}
+.pipe-step.active .pipe-label{color:rgba(255,255,255,0.75)}
+.pipe-value{font-size:22px;font-weight:800;color:var(--green-800);margin-top:2px;letter-spacing:-0.03em}
+.pipe-step.active .pipe-value{color:#fff}
+.donut-row{display:flex;gap:32px;align-items:center;padding:16px 0}
+.donut-legend{flex:1}
+.legend-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--b-light);font-size:13px}
+.legend-item:last-child{border-bottom:none}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.legend-name{color:var(--ink);flex:1;font-weight:500}
+.legend-val{font-size:12px;font-weight:700;color:var(--ink-2)}
+.formula-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.formula-block{flex:1;min-width:120px;padding:16px;border:1px solid var(--b-green);border-radius:12px;background:#fff;font-size:14px;font-weight:600;color:var(--ink);text-align:center;letter-spacing:-0.01em}
+.formula-op{width:32px;height:32px;border-radius:50%;background:var(--green-500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0}
+.formula-result{background:var(--green-900);border-color:var(--green-700);color:#fff}
+
+/* ─── BRAND STRATEGY ─────────────────────────────── */
+.belief-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+.belief-card{border:1px solid var(--b-light);border-radius:12px;padding:24px;background:var(--bg-sage)}
+.belief-card .num{font-size:11px;font-weight:700;color:var(--green-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+.belief-card h4{font-size:20px;font-weight:700;letter-spacing:-0.03em;color:var(--ink);margin-bottom:8px}
+.belief-card p{font-size:14px;color:var(--ink-2);line-height:1.6}
+.pos-block{background:var(--green-900);border-radius:16px;padding:48px;color:#fff;margin-bottom:32px;position:relative;overflow:hidden}
+.pos-block::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(30,143,94,0.4) 0%,transparent 70%)}
+.pos-block h3{font-size:36px;font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px;position:relative;z-index:1}
+.pos-block p{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:600px;position:relative;z-index:1}
+.attr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
+.attr-badge{border:1px solid var(--b-light);border-radius:12px;padding:20px 22px;background:#fff}
+.attr-badge .icon{font-size:24px;margin-bottom:10px}
+.attr-badge h5{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-0.02em}
+.attr-badge p{font-size:13px;color:var(--ink-2);line-height:1.55}
+
+/* ─── VOICE / COPY ───────────────────────────────── */
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.voice-card{border:1px solid var(--b-light);border-radius:12px;overflow:hidden}
+.voice-card-head{background:var(--bg-sage);padding:14px 20px;border-bottom:1px solid var(--b-light);font-weight:700;font-size:14px;color:var(--ink)}
+.voice-card-body{padding:20px}
+.voice-item{font-size:13px;line-height:1.6;color:var(--ink-2);padding:6px 0;border-bottom:1px solid #f0f5f3;display:flex;gap:10px}
+.voice-item:last-child{border-bottom:none}
+.voice-item .sym{flex-shrink:0;font-size:13px;margin-top:1px}
+.sym.yes{color:#1a8a50}.sym.no{color:#c04040}
+.tone-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:32px}
+.tone-table thead{background:var(--bg-sage)}
+.tone-table th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-3);padding:12px 16px;text-align:left;border:1px solid var(--b-light)}
+.tone-table td{padding:12px 16px;border:1px solid var(--b-light);color:var(--ink-2);vertical-align:top}
+.tone-table td strong{color:var(--ink)}
+.trope-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+.trope{border:1px solid var(--b-light);border-radius:10px;overflow:hidden}
+.trope-head{background:var(--bg-sage);padding:10px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-2);border-bottom:1px solid var(--b-light)}
+.trope-body{padding:12px 14px}
+.trope-bad{font-size:13px;color:#c04040;text-decoration:line-through;margin-bottom:6px;display:flex;gap:8px}
+.trope-good{font-size:13px;color:#1a8a50;display:flex;gap:8px}
+.rule-block{background:var(--bg-sage);border:1px solid var(--b-light);border-radius:10px;padding:24px 28px;margin-bottom:32px}
+.rule-item{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--b-light);font-size:14px;color:var(--ink-2);line-height:1.5}
+.rule-item:last-child{border-bottom:none}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.lb{border:1px solid var(--b-light);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.lb-head{background:var(--bg-sage);padding:10px 16px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-3);border-bottom:1px solid var(--b-light)}
+.lb-body{padding:16px;font-size:14px;color:var(--ink-2);line-height:1.7}
+
+/* Logo grid */
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:32px;border-radius:16px;overflow:hidden;border:1px solid var(--b-light)}
+.logo-swatch{padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.logo-wm{font-size:32px;font-weight:800;letter-spacing:-0.04em;line-height:1}
+.logo-sub{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em}
+
+/* Clarify "oval blob" shape */
+.blob-demo{
+  background:var(--bg-sand);
+  border-radius:50%;width:100%;height:200px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;
+  position:relative;overflow:hidden;
+}
+.chat-input-demo{
+  display:flex;align-items:center;gap:10px;
+  background:#fff;border-radius:100px;
+  padding:12px 18px;font-size:15px;color:var(--ink);
+  box-shadow:0 2px 20px rgba(0,0,0,0.1);
+  max-width:420px;width:90%;
+}
+.chat-icon{color:var(--green-400);font-size:16px}
+.chat-send{width:30px;height:30px;border-radius:50%;background:var(--green-400);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;margin-left:auto}
+
+/* Meeting card demo */
+.meeting-card{background:#fff;border:1px solid var(--b-light);border-radius:12px;overflow:hidden;max-width:480px;margin-bottom:24px}
+.meeting-card-head{padding:12px 16px;border-bottom:1px solid var(--b-light);display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink);background:var(--bg-sage)}
+.meeting-row{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--b-light);gap:16px}
+.meeting-row:last-child{border-bottom:none}
+.meeting-time{font-size:12px;font-weight:500;color:var(--ink-3);width:72px;flex-shrink:0}
+.meeting-name{font-size:14px;font-weight:700;color:var(--ink);flex:1}
+.meeting-co{font-size:12px;font-weight:500;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.co-dot{width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff}
+
+/* Testimonial */
+.testimonial-block{
+  background:var(--grad-warm);
+  border:1px solid #e8d8cc;border-radius:16px;
+  padding:40px;margin-bottom:32px;
+  display:flex;gap:32px;align-items:center;
+}
+.testimonial-photo{
+  width:100px;height:100px;border-radius:16px;
+  background:var(--bg-sky);flex-shrink:0;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  font-size:40px;
+}
+.testimonial-quote{font-size:18px;font-weight:500;color:var(--ink);line-height:1.6;letter-spacing:-0.01em;margin-bottom:16px}
+.testimonial-quote strong{font-weight:800}
+.testimonial-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.testimonial-role{font-size:13px;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <svg width="26" height="26" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="rgba(255,255,255,0.5)"/>
+      <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="#2ec982"/>
+      <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#3dd68c"/>
+    </svg>
+    Clarify
+  </div>
+  <div class="sb-sub">Brand Style Guide</div>
+  <nav>
+    <a href="#colors">01 Colors</a>
+    <a href="#typography">02 Typography</a>
+    <a href="#components">03 Components</a>
+    <a href="#logo">04 Logo &amp; Imagery</a>
+    <a href="#spacing">05 Spacing &amp; Layout</a>
+    <a href="#snippets">06 CSS Snippets</a>
+    <a href="#containers">07 Containers</a>
+    <a href="#dataviz">08 Data Viz</a>
+    <a href="#brand-strategy">09 Brand Strategy</a>
+    <a href="#copy">10 Copy, Voice &amp; Tone</a>
+  </nav>
+  <div class="sb-meta">Clarify Brand<br/>For Claude Code<br/>V2025</div>
+</aside>
+
+<main class="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-announce">
+    <svg width="14" height="14" viewBox="0 0 100 100" fill="none" style="flex-shrink:0">
+      <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="#1a7a52"/>
+      <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="#1a7a52"/>
+      <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="#1a7a52"/>
+      <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="#1a7a52"/>
+      <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="#1a7a52"/>
+      <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="#1a7a52"/>
+      <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="#1a7a52"/>
+      <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="#1a7a52"/>
+      <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="#1a7a52"/>
+      <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="#1a7a52"/>
+      <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="#2ec982"/>
+      <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#3dd68c"/>
+    </svg>
+    Introducing Rep · Your new personal sales agent <span class="arr">→</span>
+  </div>
+  <h1>Less CRMing.<br/>More selling.</h1>
+  <p>The autonomous CRM that updates fields, manages pipeline, and answers questions—so you can close more deals.</p>
+  <a class="hero-btn" href="#">Start for free</a>
+  <div class="ticker-bar">
+    <span>Days briefed</span>
+    <div class="ticker-dot"></div>
+    <span>Leads enriched</span>
+    <div class="ticker-dot active"></div>
+    <span>Calls captured</span>
+    <div class="ticker-dot"></div>
+    <span>Pipeline managed</span>
+    <div class="ticker-dot"></div>
+    <span>Questions answered</span>
+  </div>
+</section>
+
+<!-- 01 COLORS -->
+<section class="section" id="colors">
+  <div class="sec-hdr"><span class="sec-num">01</span><h2 class="sec-title">Colors</h2></div>
+
+  <div class="sub-label">Clarify Green — Primary Brand Color</div>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#0d3d2e"></div><div class="swatch-info"><div class="swatch-name">Green 900</div><div class="swatch-hex">#0d3d2e</div><div class="swatch-use">Sidebar, dark hero, rich text</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#176b48"></div><div class="swatch-info"><div class="swatch-name">Green 700</div><div class="swatch-hex">#176b48</div><div class="swatch-use">Hover CTA, dark on dark</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#1a7a52"></div><div class="swatch-info"><div class="swatch-name">Brand Green</div><div class="swatch-hex">#1a7a52</div><div class="swatch-use">Primary CTA buttons</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#25a96f"></div><div class="swatch-info"><div class="swatch-name">Green 400</div><div class="swatch-hex">#25a96f</div><div class="swatch-use">Rep icon, active dots, accent</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#4fc493"></div><div class="swatch-info"><div class="swatch-name">Green 300</div><div class="swatch-hex">#4fc493</div><div class="swatch-use">Send arrow, active states</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#a3e4c8"></div><div class="swatch-info"><div class="swatch-name">Green 200</div><div class="swatch-hex">#a3e4c8</div><div class="swatch-use">Borders in green context</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#d6f4e8"></div><div class="swatch-info"><div class="swatch-name">Green 100</div><div class="swatch-hex">#d6f4e8</div><div class="swatch-use">Focus rings, hover fills</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#edfaf4"></div><div class="swatch-info"><div class="swatch-name">Green 50</div><div class="swatch-hex">#edfaf4</div><div class="swatch-use">Card/table bg tints</div></div></div>
+  </div>
+
+  <div class="sub-label">Warm Backgrounds — The Gradient System</div>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#deeaf5"></div><div class="swatch-info"><div class="swatch-name">Sky Blue</div><div class="swatch-hex">#deeaf5</div><div class="swatch-use">Hero top — sky gradient start</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#e8f2ee"></div><div class="swatch-info"><div class="swatch-name">Mint Sage</div><div class="swatch-hex">#e8f2ee</div><div class="swatch-use">Table headers, card bg</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#e0f5ec"></div><div class="swatch-info"><div class="swatch-name">Mint</div><div class="swatch-hex">#e0f5ec</div><div class="swatch-use">Rep section gradient</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#f5ece2"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#f5ece2</div><div class="swatch-use">Warm mid-section fills</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#f0e4d8"></div><div class="swatch-info"><div class="swatch-name">Peach</div><div class="swatch-hex">#f0e4d8</div><div class="swatch-use">Hero gradient end, testimonial</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#ede3d8"></div><div class="swatch-info"><div class="swatch-name">Sand</div><div class="swatch-hex">#ede3d8</div><div class="swatch-use">Oval blob background</div></div></div>
+  </div>
+
+  <div class="sub-label">Neutrals</div>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#1a2e2a"></div><div class="swatch-info"><div class="swatch-name">Ink</div><div class="swatch-hex">#1a2e2a</div><div class="swatch-use">Headlines, primary text</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#4a6660"></div><div class="swatch-info"><div class="swatch-name">Ink Secondary</div><div class="swatch-hex">#4a6660</div><div class="swatch-use">Body copy, descriptions</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#8aa8a0"></div><div class="swatch-info"><div class="swatch-name">Ink Tertiary</div><div class="swatch-hex">#8aa8a0</div><div class="swatch-use">Placeholders, labels, axes</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#e2ece9;border:1px solid #c8ddd8"></div><div class="swatch-info"><div class="swatch-name">Border Light</div><div class="swatch-hex">#e2ece9</div><div class="swatch-use">Card borders, dividers</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#ffffff;border:1px solid #e2ece9"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#ffffff</div><div class="swatch-use">Cards, input backgrounds</div></div></div>
+  </div>
+
+  <div class="sub-label">The Hero Gradient — Clarify's Signature</div>
+  <div style="border-radius:12px;overflow:hidden;margin-bottom:32px;border:1px solid var(--b-light)">
+    <div style="height:120px;background:linear-gradient(180deg,#deeaf5 0%,#e8f0ec 35%,#f0e8e0 70%,#f0e4d8 100%)"></div>
+    <div style="padding:16px 20px;background:#fff;font-size:13px;color:var(--ink-2)">
+      <strong style="color:var(--ink)">Hero Gradient</strong> — sky blue → mint → warm cream → peach
+      <span style="font-size:12px;margin-left:16px;color:var(--ink-3)">background:linear-gradient(180deg, #deeaf5 0%, #e8f0ec 35%, #f0e8e0 70%, #f0e4d8 100%)</span>
+    </div>
+  </div>
+  <div style="border-radius:12px;overflow:hidden;margin-bottom:32px;border:1px solid var(--b-light)">
+    <div style="height:120px;background:linear-gradient(160deg,#c8eed8 0%,#e0f5ea 40%,#d4eee4 100%)"></div>
+    <div style="padding:16px 20px;background:#fff;font-size:13px;color:var(--ink-2)">
+      <strong style="color:var(--ink)">Rep Section Gradient</strong> — soft green, used for the Rep feature
+    </div>
+  </div>
+
+  <div class="sub-label">CSS Variables</div>
+  <div class="code-block"><pre><span class="c">/* Clarify Brand Tokens */</span>
+
+<span class="c">/* Brand Green */</span>
+<span class="k">--green-900</span>: <span class="s">#0d3d2e</span>;  <span class="c">/* sidebar, deep backgrounds */</span>
+<span class="k">--green-700</span>: <span class="s">#176b48</span>;  <span class="c">/* hover / pressed */</span>
+<span class="k">--green-600</span>: <span class="s">#1a7a52</span>;  <span class="c">/* primary CTA "Start for free" button */</span>
+<span class="k">--green-400</span>: <span class="s">#25a96f</span>;  <span class="c">/* Rep icon, active indicators */</span>
+<span class="k">--green-300</span>: <span class="s">#4fc493</span>;  <span class="c">/* send arrows, active states */</span>
+<span class="k">--green-100</span>: <span class="s">#d6f4e8</span>;  <span class="c">/* focus rings */</span>
+<span class="k">--green-50 </span>: <span class="s">#edfaf4</span>;  <span class="c">/* subtle bg tints */</span>
+
+<span class="c">/* Ink — teal-charcoal, NOT pure black */</span>
+<span class="k">--ink</span>:       <span class="s">#1a2e2a</span>;
+<span class="k">--ink-2</span>:     <span class="s">#4a6660</span>;
+<span class="k">--ink-3</span>:     <span class="s">#8aa8a0</span>;
+
+<span class="c">/* Warm surface gradients */</span>
+<span class="k">--grad-hero</span>: linear-gradient(<span class="v">180deg</span>, <span class="s">#deeaf5</span> <span class="v">0%</span>, <span class="s">#e8f0ec</span> <span class="v">35%</span>, <span class="s">#f0e8e0</span> <span class="v">70%</span>, <span class="s">#f0e4d8</span> <span class="v">100%</span>);
+<span class="k">--grad-rep </span>: linear-gradient(<span class="v">160deg</span>, <span class="s">#c8eed8</span> <span class="v">0%</span>, <span class="s">#e0f5ea</span> <span class="v">40%</span>, <span class="s">#d4eee4</span> <span class="v">100%</span>);
+<span class="k">--grad-warm</span>: linear-gradient(<span class="v">180deg</span>, <span class="s">#f5ece2</span> <span class="v">0%</span>, <span class="s">#f0e4d8</span> <span class="v">100%</span>);</pre></div>
+</section>
+
+<!-- 02 TYPOGRAPHY -->
+<section class="section" id="typography">
+  <div class="sec-hdr"><span class="sec-num">02</span><h2 class="sec-title">Typography</h2></div>
+  <p class="copy-desc">Clarify uses <strong>Plus Jakarta Sans</strong> exclusively — a single geometric sans-serif across all weights. Headlines are heavy (800), UI text is semibold (600), body is regular (400). No serif fonts. The result is clean, modern, and approachable — never academic or corporate.</p>
+
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">Eyebrow / Tag</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">11–12px / weight 600<br/>ALL CAPS / tracking 0.08em</div></div>
+    <div class="type-preview"><span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--green-500)">AUTONOMOUS CRM</span></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">Display H1</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">80–84px / weight 800<br/>tracking −0.04em / lh 1.05</div></div>
+    <div class="type-preview"><span style="font-size:clamp(36px,4vw,72px);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:var(--ink)">Less CRMing.</span></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">H2</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">52px / weight 800<br/>tracking −0.04em / lh 1.1</div></div>
+    <div class="type-preview"><span style="font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-0.04em;line-height:1.1;color:var(--ink)">Every deal, in one place.</span></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">H3 / Feature</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">32–36px / weight 800<br/>tracking −0.03em / lh 1.15</div></div>
+    <div class="type-preview"><span style="font-size:clamp(20px,2.5vw,32px);font-weight:800;letter-spacing:-0.03em;line-height:1.15;color:var(--ink)">The prep you'd do, if you had time</span></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">Large Body</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">20px / weight 400<br/>tracking −0.01em / lh 1.6</div></div>
+    <div class="type-preview"><span style="font-size:20px;font-weight:400;letter-spacing:-0.01em;line-height:1.6;color:var(--ink-2)">Rep is your new personal sales agent. Every meeting briefed, every deal known, every follow-up handled.</span></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">Body</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">15–16px / weight 400<br/>tracking −0.01em / lh 1.65</div></div>
+    <div class="type-preview"><span style="font-size:15px;font-weight:400;letter-spacing:-0.01em;line-height:1.65;color:var(--ink-2)">Clarify stays in sync with your email and calendar, so every lead, meeting, and deal lives in one place — automatically.</span></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><div class="type-meta-name">UI Label / Small</div><div class="type-meta-fam">Plus Jakarta Sans</div><div class="type-meta-spec">11–13px / weight 600<br/>tracking −0.01em</div></div>
+    <div class="type-preview"><span style="font-size:13px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-3)">Pipeline Managed · Deals Updated · Rep Ready</span></div>
+  </div>
+
+  <div class="sub-label" style="margin-top:40px">Font Stack</div>
+  <div class="code-block"><pre><span class="c">/* One font. All weights. */</span>
+--font: <span class="s">'Plus Jakarta Sans'</span>, <span class="s">'Inter'</span>, -apple-system, BlinkMacSystemFont, sans-serif;
+
+h1 { font-weight: <span class="v">800</span>; font-size: <span class="v">80px</span>; letter-spacing: <span class="v">-0.04em</span>; }
+h2 { font-weight: <span class="v">800</span>; font-size: <span class="v">52px</span>; letter-spacing: <span class="v">-0.04em</span>; }
+h3 { font-weight: <span class="v">700</span>; font-size: <span class="v">32px</span>; letter-spacing: <span class="v">-0.03em</span>; }
+body    { font-weight: <span class="v">400</span>; font-size: <span class="v">16px</span>; letter-spacing: <span class="v">-0.01em</span>; }
+.label  { font-weight: <span class="v">600</span>; font-size: <span class="v">12px</span>; text-transform: uppercase; letter-spacing: <span class="v">0.08em</span>; }
+.ui     { font-weight: <span class="v">600</span>; font-size: <span class="v">14px</span>; letter-spacing: <span class="v">-0.02em</span>; }
+
+color:   <span class="s">#1a2e2a</span>  <span class="c">/* ink — teal-charcoal, NOT #000 */</span>
+</pre></div>
+</section>
+
+<!-- 03 COMPONENTS -->
+<section class="section" id="components">
+  <div class="sec-hdr"><span class="sec-num">03</span><h2 class="sec-title">Components</h2></div>
+
+  <div class="sub-label">Buttons — Light Context</div>
+  <div class="btn-row">
+    <a class="btn-p btn-p-lg" href="#">Start for free</a>
+    <a class="btn-p" href="#">Get to know Rep →</a>
+    <a class="btn-s" href="#">Talk to sales</a>
+    <a class="btn-g" href="#">← Back</a>
+    <a class="btn-p btn-sm" href="#">New Deal</a>
+  </div>
+
+  <div class="sub-label">Buttons — Green Gradient Context</div>
+  <div class="btn-row btn-row-grad">
+    <a class="btn-p btn-p-lg" href="#">Get to know Rep →</a>
+    <a class="btn-s" href="#">View pricing</a>
+  </div>
+
+  <div class="sub-label">Buttons — Dark Context</div>
+  <div class="btn-row btn-row-dark">
+    <a class="btn-p" href="#">Start for free</a>
+    <a class="btn-s" href="#">Learn more</a>
+    <a class="btn-g" href="#">See pricing</a>
+  </div>
+
+  <div class="sub-label">Pills &amp; Tags</div>
+  <div class="btn-row" style="gap:10px">
+    <span class="pill pill-g">All Deals</span>
+    <span class="pill pill-dk">New Feature</span>
+    <span class="pill pill-warm">Enterprise</span>
+    <span class="pill pill-blue">Coming soon</span>
+    <span class="pill pill-ink">Rep Agent</span>
+  </div>
+
+  <div class="sub-label">Cards — Default, Gradient, Dark</div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-tag"><span class="pill pill-g">Pipeline AI</span></div>
+      <h3>New deals detected. None neglected.</h3>
+      <p>Clarify identifies new opportunities and updates deal stages automatically as signals arrive.</p>
+    </div>
+    <div class="card card-grad">
+      <div class="card-tag"><span style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--green-700)">✦ Rep</span></div>
+      <h3>The prep you'd do, if you had time.</h3>
+      <p>Every meeting briefed, every deal known, every follow-up handled automatically.</p>
+    </div>
+    <div class="card card-dk">
+      <div class="card-tag"><span class="pill pill-dk">Enrichment</span></div>
+      <h3>One click. All synced.</h3>
+      <p>Email, calendar, enrichment — every lead and meeting lives in one place.</p>
+    </div>
+  </div>
+
+  <div class="sub-label">Chat Input — Rep's Oval UI Moment</div>
+  <div class="blob-demo">
+    <div class="chat-input-demo">
+      <span class="chat-icon">✦</span>
+      <span style="color:var(--ink);font-size:15px;font-weight:400;flex:1">What should I cover in next week's demo?</span>
+      <button class="chat-send">↑</button>
+    </div>
+  </div>
+
+  <div class="sub-label">Meeting Card — Rep's Calendar View</div>
+  <div class="meeting-card">
+    <div class="meeting-card-head">
+      <span style="font-size:16px">📅</span> Upcoming meetings
+    </div>
+    <div class="meeting-row">
+      <div class="meeting-time">9:00–9:30</div>
+      <div class="meeting-name">Product Demo</div>
+      <div class="meeting-co"><div class="co-dot" style="background:#e53935">A</div>Anthropic</div>
+    </div>
+    <div class="meeting-row">
+      <div class="meeting-time">9:30–10:30</div>
+      <div class="meeting-name">Contract Feedback</div>
+      <div class="meeting-co"><div class="co-dot" style="background:#1a2e2a">L</div>Linear</div>
+    </div>
+    <div class="meeting-row">
+      <div class="meeting-time">10:30–11:00</div>
+      <div class="meeting-name">Discovery Call</div>
+      <div class="meeting-co"><div class="co-dot" style="background:#f5a623">R</div>Rippling</div>
+    </div>
+  </div>
+
+  <div class="sub-label">Testimonial Block</div>
+  <div class="testimonial-block">
+    <div class="testimonial-photo">👤</div>
+    <div>
+      <div class="testimonial-quote">"<strong>I ditched HubSpot</strong> and moved to Attio. Two weeks later <strong>I moved to Clarify.</strong> I'm not moving off of it unless I'm forced to."</div>
+      <div class="testimonial-name">Troy Munson</div>
+      <div class="testimonial-role">CEO @ Dimmo</div>
+    </div>
+  </div>
+
+  <div class="sub-label">Form Inputs</div>
+  <div style="border:1px solid var(--b-light);border-radius:16px;padding:32px;max-width:480px;margin-bottom:32px">
+    <label class="input-label">Work Email</label>
+    <input class="input-field" type="email" placeholder="you@company.com"/>
+    <div class="input-hint">No credit card required.</div>
+    <label class="input-label">Company</label>
+    <input class="input-field" type="text" placeholder="Acme Corp"/>
+    <div style="margin-top:8px"></div>
+    <a class="btn-p" href="#">Start for free</a>
+  </div>
+
+  <div class="sub-label">Data Tables</div>
+  <table class="data-table" style="margin-bottom:32px">
+    <thead><tr><th>Company</th><th>Stage</th><th>Value</th><th>Last Activity</th><th>Trend</th></tr></thead>
+    <tbody>
+      <tr><td class="lc">Stripe</td><td><span class="pill pill-warm" style="font-size:10px;padding:3px 10px">Proposal</span></td><td>$48,000</td><td>2h ago</td><td class="pos">↑ Active</td></tr>
+      <tr><td class="lc">Notion</td><td><span class="pill pill-g" style="font-size:10px;padding:3px 10px">Closed Won</span></td><td>$22,500</td><td>Yesterday</td><td class="pos">↑ Closed</td></tr>
+      <tr><td class="lc">Linear</td><td><span class="pill pill-blue" style="font-size:10px;padding:3px 10px">Discovery</span></td><td>$15,000</td><td>3 days ago</td><td class="neg">↓ Stalled</td></tr>
+      <tr><td class="lc">Vercel</td><td><span class="pill" style="font-size:10px;padding:3px 10px;background:#fff0ee;border-color:#f5b8b8;color:#c04040">At Risk</span></td><td>$31,000</td><td>1 week ago</td><td class="neg">↓ Cold</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 04 LOGO -->
+<section class="section" id="logo">
+  <div class="sec-hdr"><span class="sec-num">04</span><h2 class="sec-title">Logo &amp; Imagery</h2></div>
+
+  <!-- Reusable inline SVG logo mark -->
+  <div class="sub-label">The Mark — Gear "C" Icon</div>
+  <div style="display:flex;gap:32px;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap">
+    <!-- Large icon on white -->
+    <div style="background:#fff;border:1px solid var(--b-light);border-radius:20px;padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="22" fill="#0f1e2e"/>
+        <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="#1a7a52"/>
+        <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="#1a7a52"/>
+        <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="#1a7a52"/>
+        <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="#1a7a52"/>
+        <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="#1a7a52"/>
+        <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="#1a7a52"/>
+        <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="#1a7a52"/>
+        <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="#1a7a52"/>
+        <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="#1a7a52"/>
+        <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="#1a7a52"/>
+        <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="#2ec982"/>
+        <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#3dd68c"/>
+      </svg>
+      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-3)">App Icon</span>
+    </div>
+    <!-- Medium icon -->
+    <div style="background:#fff;border:1px solid var(--b-light);border-radius:16px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="22" fill="#0f1e2e"/>
+        <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="#1a7a52"/>
+        <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="#1a7a52"/>
+        <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="#1a7a52"/>
+        <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="#1a7a52"/>
+        <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="#1a7a52"/>
+        <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="#1a7a52"/>
+        <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="#1a7a52"/>
+        <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="#1a7a52"/>
+        <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="#1a7a52"/>
+        <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="#1a7a52"/>
+        <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="#2ec982"/>
+        <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#3dd68c"/>
+      </svg>
+      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-3)">48px</span>
+    </div>
+    <!-- Small icon -->
+    <div style="background:#fff;border:1px solid var(--b-light);border-radius:12px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="22" fill="#0f1e2e"/>
+        <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="#1a7a52"/>
+        <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="#1a7a52"/>
+        <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="#1a7a52"/>
+        <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="#1a7a52"/>
+        <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="#1a7a52"/>
+        <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="#1a7a52"/>
+        <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="#1a7a52"/>
+        <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="#1a7a52"/>
+        <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="#1a7a52"/>
+        <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="#1a7a52"/>
+        <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="#2ec982"/>
+        <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#3dd68c"/>
+      </svg>
+      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-3)">28px</span>
+    </div>
+  </div>
+
+  <!-- Wordmark SVG definition — reused across all contexts -->
+  <div class="sub-label">Full Wordmark — Icon + Logotype</div>
+
+  <!-- Define the shared mark as a macro -->
+  <svg height="0" width="0" style="position:absolute">
+    <defs>
+      <symbol id="clarify-mark" viewBox="0 0 100 100">
+        <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="#1a7a52"/>
+        <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="#1a7a52"/>
+        <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="#1a7a52"/>
+        <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="#1a7a52"/>
+        <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="#1a7a52"/>
+        <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="#1a7a52"/>
+        <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="#1a7a52"/>
+        <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="#1a7a52"/>
+        <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="#1a7a52"/>
+        <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="#1a7a52"/>
+        <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="#2ec982"/>
+        <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#3dd68c"/>
+      </symbol>
+      <symbol id="clarify-mark-white" viewBox="0 0 100 100">
+        <path d="M50 8 L56 1 L62 8 L56 15 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M67 12 L76 8 L80 17 L71 21 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M83 26 L92 24 L94 33 L85 35 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M88 44 L97 46 L96 55 L87 53 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M83 62 L91 67 L87 75 L79 70 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M67 77 L73 85 L65 89 L59 81 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M50 82 L55 91 L46 93 L41 84 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M33 77 L37 85 L28 88 L24 80 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M17 62 L11 68 L5 62 L11 56 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M12 44 L4 45 L4 37 L12 38 Z" fill="rgba(255,255,255,0.5)"/>
+        <path d="M50 20 C33 20 19 34 19 51 C19 68 33 82 50 82 C58 82 65.5 79 71.2 74 L62.8 65.5 C59.2 68.8 54.8 71 50 71 C39.5 71 31 62.5 31 52 L31 50 C31 39.5 39.5 31 50 31 C54.8 31 59.2 33.2 62.8 36.5 L71.2 28 C65.5 23 58 20 50 20 Z" fill="rgba(255,255,255,0.8)"/>
+        <path d="M50 26 C36.2 26 25 37.2 25 51 C25 64.8 36.2 76 50 76 C56.8 76 63 73.4 67.6 69.1 L60.2 61.7 C57.1 64.5 53.2 66.2 49 66.2 C41 66.2 34.5 59.7 34.5 51.7 L34.5 50.3 C34.5 42.3 41 35.8 49 35.8 C53.2 35.8 57.1 37.5 60.2 40.3 L67.6 32.9 C63 28.6 56.8 26 50 26 Z" fill="#ffffff"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="logo-grid">
+    <!-- On White -->
+    <div class="logo-swatch" style="background:#ffffff">
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg width="36" height="36" viewBox="0 0 100 100"><use href="#clarify-mark"/></svg>
+        <span style="font-family:var(--font);font-size:30px;font-weight:800;letter-spacing:-0.04em;color:#0f1729">Clarify</span>
+      </div>
+      <div class="logo-sub" style="color:#8aa8a0">On White</div>
+    </div>
+    <!-- On Hero Gradient -->
+    <div class="logo-swatch" style="background:linear-gradient(135deg,#deeaf5 0%,#f0e4d8 100%)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg width="36" height="36" viewBox="0 0 100 100"><use href="#clarify-mark"/></svg>
+        <span style="font-family:var(--font);font-size:30px;font-weight:800;letter-spacing:-0.04em;color:#0f1729">Clarify</span>
+      </div>
+      <div class="logo-sub" style="color:#4a6660">On Gradient</div>
+    </div>
+    <!-- On Dark Green -->
+    <div class="logo-swatch" style="background:#0d3d2e">
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg width="36" height="36" viewBox="0 0 100 100"><use href="#clarify-mark"/></svg>
+        <span style="font-family:var(--font);font-size:30px;font-weight:800;letter-spacing:-0.04em;color:#ffffff">Clarify</span>
+      </div>
+      <div class="logo-sub" style="color:#4fc493">On Dark Green</div>
+    </div>
+    <!-- On Warm Peach -->
+    <div class="logo-swatch" style="background:#f0e4d8">
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg width="36" height="36" viewBox="0 0 100 100"><use href="#clarify-mark"/></svg>
+        <span style="font-family:var(--font);font-size:30px;font-weight:800;letter-spacing:-0.04em;color:#0f1729">Clarify</span>
+      </div>
+      <div class="logo-sub" style="color:#8aa8a0">On Warm Peach</div>
+    </div>
+  </div>
+
+  <div class="sub-label">Imagery Guidelines</div>
+  <div class="code-block"><pre><span class="c">/* Clarify Imagery Rules */</span>
+
+Photos &amp; illustrations:
+✓  Real founders, candid and warm — natural light
+✓  Rounded-square crop on portraits: border-radius <span class="v">16px</span>
+✓  Soft gradient backgrounds (sky, peach, mint)
+✓  Warm backdrop for testimonials
+✗  Stock boardroom photography (suits, handshakes)
+✗  Dark / dramatic photography — keep it soft and airy
+✗  Hard shadows — use soft ambient only
+
+Product screenshots:
+✓  Real Clarify UI with realistic-looking data
+✓  Rounded frames: border-radius <span class="v">12–16px</span>
+✓  Drop shadow: <span class="v">0 8px 32px rgba(0,0,0,0.08)</span>
+✓  Place on gradient or white backgrounds
+
+The Blob / Oval:
+✓  Sand oval (#ede3d8) for Rep chat interactions
+✓  Fully rounded: border-radius <span class="v">50%</span>
+✓  The chat input sits centered inside it
+✓  Gives a playful, conversational feel</pre></div>
+</section>
+
+<!-- 05 SPACING -->
+<section class="section" id="spacing">
+  <div class="sec-hdr"><span class="sec-num">05</span><h2 class="sec-title">Spacing &amp; Layout</h2></div>
+  <div class="sub-label">8px Base Grid</div>
+  <div class="spacing-row">
+    <div class="spacing-item"><div class="spacing-bar" style="height:4px"></div><div class="spacing-label">4px<br/>XS</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height:8px"></div><div class="spacing-label">8px<br/>SM</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height:16px"></div><div class="spacing-label">16px<br/>MD</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height:24px"></div><div class="spacing-label">24px<br/>LG</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height:32px"></div><div class="spacing-label">32px<br/>XL</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height:48px"></div><div class="spacing-label">48px<br/>2XL</div></div>
+    <div class="spacing-item"><div class="spacing-bar" style="height:72px"></div><div class="spacing-label">72px<br/>3XL</div></div>
+  </div>
+  <div class="code-block"><pre><span class="c">/* Layout Rules */</span>
+Max content width:   <span class="v">1200px</span>
+Page horizontal pad: <span class="v">80px</span> desktop · <span class="v">24px</span> mobile
+Section padding:     <span class="v">72px 80px</span>
+Card padding:        <span class="v">24–32px</span>
+Card gap:            <span class="v">16px</span>
+Component gap:       <span class="v">12px</span>
+Border-radius:       <span class="v">12–16px</span> cards · <span class="v">10px</span> inputs · <span class="v">100px</span> pills/buttons
+Oval blob:           <span class="v">border-radius: 50%</span>  (full ellipse)</pre></div>
+</section>
+
+<!-- 06 CSS SNIPPETS -->
+<section class="section" id="snippets">
+  <div class="sec-hdr"><span class="sec-num">06</span><h2 class="sec-title">CSS Snippets</h2></div>
+
+  <div class="sub-label">Hero with Gradient Background</div>
+  <div class="code-block"><pre><span class="c">/* Hero — Clarify gradient background */</span>
+.hero {
+  background: linear-gradient(<span class="v">180deg</span>,
+    <span class="s">#deeaf5</span> <span class="v">0%</span>,    <span class="c">/* sky blue */</span>
+    <span class="s">#e8f0ec</span> <span class="v">35%</span>,   <span class="c">/* mint */</span>
+    <span class="s">#f0e8e0</span> <span class="v">70%</span>,   <span class="c">/* warm cream */</span>
+    <span class="s">#f0e4d8</span> <span class="v">100%</span>  <span class="c">/* peach */</span>
+  );
+  padding: <span class="v">96px 80px</span>;
+}
+.hero h1 {
+  font-family: <span class="s">'Plus Jakarta Sans'</span>, sans-serif;
+  font-weight: <span class="v">800</span>;
+  font-size: <span class="v">84px</span>;
+  letter-spacing: <span class="v">-0.04em</span>;
+  color: <span class="s">#1a2e2a</span>;
+  line-height: <span class="v">1.05</span>;
+}</pre></div>
+
+  <div class="sub-label">Primary CTA Button — Pill Shape</div>
+  <div class="code-block"><pre><span class="c">/* "Start for free" button */</span>
+.btn-primary {
+  background: <span class="s">#1a7a52</span>;
+  color: #fff;
+  font-family: <span class="s">'Plus Jakarta Sans'</span>, sans-serif;
+  font-weight: <span class="v">600</span>;
+  font-size: <span class="v">16px</span>;
+  letter-spacing: <span class="v">-0.02em</span>;
+  padding: <span class="v">14px 28px</span>;
+  border-radius: <span class="v">100px</span>;  <span class="c">/* full pill — key shape */</span>
+  border: none;
+  transition: background <span class="v">0.15s</span>;
+}
+.btn-primary:hover { background: <span class="s">#176b48</span>; }
+
+<span class="c">/* Focus ring */</span>
+:focus-visible {
+  outline: <span class="v">2px</span> solid <span class="s">#25a96f</span>;
+  outline-offset: <span class="v">2px</span>;
+}</pre></div>
+
+  <div class="sub-label">Blob Oval — The Rep UI Signature</div>
+  <div class="code-block"><pre><span class="c">/* Oval blob — Rep chat section */</span>
+.blob {
+  background: <span class="s">#ede3d8</span>;
+  border-radius: <span class="v">50%</span>;  <span class="c">/* full ellipse */</span>
+  width: <span class="v">100%</span>;
+  max-width: <span class="v">900px</span>;
+  aspect-ratio: <span class="v">16 / 9</span>;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: <span class="v">0 auto</span>;
+}
+.chat-input {
+  display: flex; align-items: center; gap: <span class="v">10px</span>;
+  background: #fff;
+  border-radius: <span class="v">100px</span>;
+  padding: <span class="v">12px 18px</span>;
+  box-shadow: <span class="v">0 2px 20px rgba(0,0,0,0.10)</span>;
+  width: <span class="v">420px</span>;
+  font-size: <span class="v">15px</span>;
+  color: <span class="s">#1a2e2a</span>;
+}</pre></div>
+</section>
+
+<!-- 07 CONTAINERS -->
+<section class="section" id="containers">
+  <div class="sec-hdr"><span class="sec-num">07</span><h2 class="sec-title">Container Styles</h2></div>
+  <p class="copy-desc">Five section surface styles. Each has its own mood. All share the same content skeleton: small label → H2 → body copy → buttons.</p>
+
+  <div class="sub-label">Light — White Background</div>
+  <div class="c-demo c-light"><div class="c-inner"><div class="c-tag">Light Style</div><h2>H2 headline heavy<br/>font weight 800</h2><p>Body copy lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.</p><div class="c-btns"><a class="btn-p" href="#">Start for free</a><a class="btn-s" href="#">Learn more</a></div></div></div>
+
+  <div class="sub-label">Sky — Light Blue Gradient (Hero Style)</div>
+  <div class="c-demo c-sky"><div class="c-inner"><div class="c-tag">Sky Style</div><h2>H2 headline heavy<br/>font weight 800</h2><p>Used for the main hero. Light sky blue fading to mint. Clean and airy — the default opening feel.</p><div class="c-btns"><a class="btn-p btn-p-lg" href="#">Start for free</a></div></div></div>
+
+  <div class="sub-label">Rep Green — Soft Mint Gradient</div>
+  <div class="c-demo c-rep"><div class="c-inner"><div class="c-tag">Rep Style</div><h2>H2 headline heavy<br/>font weight 800</h2><p>The Rep feature section. Soft green gradient, dark teal ink. Feels fresh and product-forward.</p><div class="c-btns"><a class="btn-p" href="#">Get to know Rep →</a></div></div></div>
+
+  <div class="sub-label">Warm — Cream / Peach Gradient</div>
+  <div class="c-demo c-warm"><div class="c-inner"><div class="c-tag" style="background:#fef3e8;border-color:#f5d9b8;color:#a06030">Warm Style</div><h2>H2 headline heavy<br/>font weight 800</h2><p>Testimonials, founder quotes, and human moments. Warm and trusting — not technical.</p><div class="c-btns"><a class="btn-p" href="#">Talk to sales</a><a class="btn-s" href="#">Read stories</a></div></div></div>
+
+  <div class="sub-label">Dark — Deep Forest Green</div>
+  <div class="c-demo c-dark"><div class="c-inner"><div class="c-tag">Dark Style</div><h2>H2 headline heavy<br/>font weight 800</h2><p>High contrast. For brand moments that need presence. Keep use minimal — don't overdo it.</p><div class="c-btns"><a class="btn-p" href="#">Start for free</a><a class="btn-s" href="#">Learn more</a></div></div></div>
+
+  <div class="sub-label" style="margin-top:32px">Container Tokens</div>
+  <div class="code-block"><pre><span class="c">/* Light */</span>
+bg: #fff  |  text: <span class="s">#1a2e2a</span>
+tag: bg <span class="s">#edfaf4</span> / border <span class="s">#a3e4c8</span> / text <span class="s">#176b48</span>
+
+<span class="c">/* Sky */</span>
+bg: linear-gradient(<span class="v">180deg</span>, <span class="s">#deeaf5</span> → <span class="s">#e8f0ec</span> → <span class="s">#f0e8e0</span> → <span class="s">#f0e4d8</span>)
+tag: rgba(255,255,255,0.7) bg / <span class="s">#b8d0e8</span> border / <span class="s">#2a5080</span> text
+
+<span class="c">/* Rep */</span>
+bg: linear-gradient(<span class="v">160deg</span>, <span class="s">#c8eed8</span> → <span class="s">#e0f5ea</span> → <span class="s">#d4eee4</span>)
+text: <span class="s">#0d3d2e</span>  |  tag: rgba(255,255,255,0.6) / <span class="s">#a3e4c8</span> / <span class="s">#176b48</span>
+
+<span class="c">/* Warm */</span>
+bg: linear-gradient(<span class="v">180deg</span>, <span class="s">#f5ece2</span> → <span class="s">#f0e4d8</span>)
+tag: <span class="s">#fef3e8</span> bg / <span class="s">#f5d9b8</span> border / <span class="s">#a06030</span> text
+
+<span class="c">/* Dark */</span>
+bg: <span class="s">#0d3d2e</span>  |  text: #fff
+tag: rgba(255,255,255,0.1) / rgba(255,255,255,0.2) / <span class="s">#4fc493</span></pre></div>
+</section>
+
+<!-- 08 DATA VIZ -->
+<section class="section" id="dataviz">
+  <div class="sec-hdr"><span class="sec-num">08</span><h2 class="sec-title">Data Viz</h2></div>
+  <p class="copy-desc">Clarify charts are approachable and clean. Rounded bars. Green-first palette with gold as accent. Plus Jakarta Sans Bold for all labels and values. Always readable at a glance — built for founders checking on deals, not analysts doing quarterly reviews.</p>
+
+  <div class="sub-label">Palette — All Chart Types</div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#d6f4e8"></div>#d6f4e8</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#4fc493"></div>#4fc493</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#1a7a52"></div>#1a7a52 — primary</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#0d3d2e"></div>#0d3d2e</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#f5a623"></div>#f5a623 — gold accent</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#1a8a50"></div>#1a8a50 — positive</div>
+    <div style="display:flex;align-items:center;gap=6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#c04040"></div>#c04040 — negative</div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600"><div style="width:16px;height:16px;border-radius:4px;background:#8aa8a0"></div>#8aa8a0 — axes</div>
+  </div>
+
+  <div class="sub-label">1. Bar Chart — Deals by Stage</div>
+  <div class="chart-frame" style="max-width:540px">
+    <div class="chart-hdr"><div class="chart-title">Deals by Stage</div><div class="chart-sub">Q1 2026 · Auto-updated by Clarify</div></div>
+    <div class="chart-body">
+      <div class="bar-chart">
+        <div class="bar-col"><div class="bar" style="height:55px"></div><div class="bar-label">Prospect</div></div>
+        <div class="bar-col"><div class="bar" style="height:95px"></div><div class="bar-label">Qualified</div></div>
+        <div class="bar-col"><div class="bar accent" style="height:138px"></div><div class="bar-label">Proposal</div></div>
+        <div class="bar-col"><div class="bar" style="height:80px"></div><div class="bar-label">Negotiation</div></div>
+        <div class="bar-col"><div class="bar" style="height:50px;background:#1a8a50"></div><div class="bar-label">Won</div></div>
+        <div class="bar-col"><div class="bar" style="height:28px;background:#f5b8b8"></div><div class="bar-label">Lost</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">2. Pipeline Funnel</div>
+  <div class="chart-frame" style="max-width:700px">
+    <div class="chart-hdr"><div class="chart-title">Active Pipeline</div><div class="chart-sub">Live · Updated by Rep</div></div>
+    <div class="chart-body">
+      <div class="pipeline-steps">
+        <div class="pipe-step"><div class="pipe-label">Prospects</div><div class="pipe-value">142</div></div>
+        <div class="pipe-step"><div class="pipe-label">Qualified</div><div class="pipe-value">67</div></div>
+        <div class="pipe-step active"><div class="pipe-label">Proposal</div><div class="pipe-value">31</div></div>
+        <div class="pipe-step"><div class="pipe-label">Negotiate</div><div class="pipe-value">14</div></div>
+        <div class="pipe-step"><div class="pipe-label">Closed</div><div class="pipe-value">8</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">3. Revenue by Source</div>
+  <div class="chart-frame" style="max-width:480px">
+    <div class="chart-hdr"><div class="chart-title">Revenue by Source</div><div class="chart-sub">Last 90 days</div></div>
+    <div class="chart-body">
+      <div class="donut-row">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#d6f4e8" stroke-width="18"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#1a7a52" stroke-width="18" stroke-dasharray="181 121" stroke-dashoffset="-30"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#f5a623" stroke-width="18" stroke-dasharray="72 230" stroke-dashoffset="-211"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#4fc493" stroke-width="18" stroke-dasharray="49 253" stroke-dashoffset="-283"/>
+        </svg>
+        <div class="donut-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#1a7a52"></div><span class="legend-name">Inbound</span><span class="legend-val">60%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#f5a623"></div><span class="legend-name">Outbound</span><span class="legend-val">24%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#4fc493"></div><span class="legend-name">Referral</span><span class="legend-val">16%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">4. Rep's Formula</div>
+  <div class="chart-frame" style="max-width:680px">
+    <div class="chart-hdr"><div class="chart-title">How Rep adds up</div><div class="chart-sub">Clarify's AI agent formula</div></div>
+    <div class="chart-body">
+      <div class="formula-row">
+        <div class="formula-block">Call recordings</div>
+        <div class="formula-op">+</div>
+        <div class="formula-block">Email signals</div>
+        <div class="formula-op">+</div>
+        <div class="formula-block">Enrichment data</div>
+        <div class="formula-op">=</div>
+        <div class="formula-block formula-result">Rep, ready to close</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 BRAND STRATEGY -->
+<section class="section" id="brand-strategy">
+  <div class="sec-hdr"><span class="sec-num">09</span><h2 class="sec-title">Brand Strategy</h2></div>
+
+  <div class="sub-label">Core Belief</div>
+  <div class="pos-block">
+    <h3>CRM should work for you. Not the other way around.</h3>
+    <p>Founders didn't start companies to spend their days logging calls and updating fields. Clarify exists to make that burden disappear — so founders can focus on relationships and revenue.</p>
+  </div>
+
+  <div class="sub-label">Mission</div>
+  <div class="lb"><div class="lb-head">Mission Statement</div><div class="lb-body">To give every founder the unfair advantage of a world-class sales operation — without the overhead of one.</div></div>
+
+  <div class="sub-label" style="margin-top:24px">Who We Serve</div>
+  <div class="belief-grid">
+    <div class="belief-card"><div class="num">01 — Founders</div><h4>Founder-led sales</h4><p>Rep handles briefings, follow-ups, field updates. They just show up to sell.</p></div>
+    <div class="belief-card"><div class="num">02 — Early Sales Teams</div><h4>Small GTM teams</h4><p>Five reps can operate like fifteen with automated pipeline and AI-enriched contacts.</p></div>
+    <div class="belief-card"><div class="num">03 — Technical Founders</div><h4>Builders who hate busywork</h4><p>Flexible data model, open API, zero-setup AI — it just works out of the box.</p></div>
+    <div class="belief-card"><div class="num">04 — Community</div><h4>The startup ecosystem</h4><p>Our customers are our beta testers, advocates, and loudest roadmap contributors.</p></div>
+  </div>
+
+  <div class="sub-label">Brand Attributes</div>
+  <div class="attr-grid">
+    <div class="attr-badge"><div class="icon">⚡</div><h5>Effortless</h5><p>Every feature reduces your work. Default-to-automatic is the rule, not the exception.</p></div>
+    <div class="attr-badge"><div class="icon">🎯</div><h5>Focused</h5><p>We serve founders and early GTM teams. We're the best at your stage — not everything to everyone.</p></div>
+    <div class="attr-badge"><div class="icon">🤝</div><h5>Warm &amp; Human</h5><p>CRM is about relationships. Our brand feels like it was built by founders, for founders.</p></div>
+    <div class="attr-badge"><div class="icon">🧠</div><h5>Intelligent</h5><p>AI isn't bolted on — it's the core. Rep, enrichment, and pipeline AI are all native.</p></div>
+    <div class="attr-badge"><div class="icon">✨</div><h5>Joyful</h5><p>Using Clarify should feel delightful. Clean UI, smooth interactions. The CRM shouldn't feel like a chore.</p></div>
+    <div class="attr-badge"><div class="icon">🚀</div><h5>Ambitious</h5><p>We're building toward a CRM that acts like a top-performing sales rep. The best is ahead.</p></div>
+  </div>
+
+  <div class="sub-label">Brand Persona</div>
+  <div class="lb"><div class="lb-head">Our Persona</div><div class="lb-body" style="line-height:1.8">Think of Clarify as that founder friend who has every system dialed in — but never makes you feel bad about yours. Direct without being cold. Competent without being smug. They show up prepared, leave things better than they found them, and genuinely want you to win.<br/><br/>When Clarify talks to you, it sounds like someone who's been in the trenches — not a SaaS brand trying to seem relatable.</div></div>
+</section>
+
+<!-- 10 COPY -->
+<section class="section" id="copy">
+  <div class="sec-hdr"><span class="sec-num">10</span><h2 class="sec-title">Copy, Voice &amp; Tone</h2></div>
+
+  <div class="sub-label">What is Clarify? — By Length</div>
+  <div class="lb"><div class="lb-head">Long</div><div class="lb-body">The way founders sell hasn't changed in decades. You jump between tools, manually log calls, update fields you'll never look at again, and still miss follow-ups. The CRM was supposed to help — but it became another job.<br/><br/>Clarify is the autonomous CRM built for the way founders actually work. It joins your calls, reads your email, enriches your contacts, and keeps your pipeline current — without you asking it to. Rep, our AI sales agent, briefs you before every meeting, drafts follow-ups, and answers questions about any deal, anytime.</div></div>
+  <div class="lb"><div class="lb-head">Medium</div><div class="lb-body">Clarify is the autonomous CRM for founder-led startups — one that stays in sync with your email and calendar, updates your pipeline automatically, and runs Rep, your personal AI sales agent, to brief every meeting and handle every follow-up.</div></div>
+  <div class="lb"><div class="lb-head">Short</div><div class="lb-body">Clarify is the autonomous CRM that updates itself, manages your pipeline, and helps you close more deals — so you can stop CRMing and start selling.</div></div>
+
+  <div class="sub-label" style="margin-top:32px">Voice Principles</div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-card-head">✓ Direct</div>
+      <div class="voice-card-body">
+        <div class="voice-item"><span class="sym yes">✓</span> Lead with the benefit: "Less CRMing. More selling."</div>
+        <div class="voice-item"><span class="sym yes">✓</span> Back claims with numbers: "90% of data entry, handled."</div>
+        <div class="voice-item"><span class="sym no">✗</span> Don't bury the lede. First line must earn the second.</div>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-card-head">✓ Warm</div>
+      <div class="voice-card-body">
+        <div class="voice-item"><span class="sym yes">✓</span> Show empathy: "You didn't start a company to log calls."</div>
+        <div class="voice-item"><span class="sym yes">✓</span> Celebrate customer wins like your own — they are.</div>
+        <div class="voice-item"><span class="sym no">✗</span> Don't manufacture relatability. Be genuine.</div>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-card-head">✓ Confident</div>
+      <div class="voice-card-body">
+        <div class="voice-item"><span class="sym yes">✓</span> Let customers speak: "I'm not moving off of it."</div>
+        <div class="voice-item"><span class="sym yes">✓</span> Make bold claims you can back: "The prep you'd do if you had time."</div>
+        <div class="voice-item"><span class="sym no">✗</span> Don't hedge everything. Confidence is a feature.</div>
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-card-head">✓ Playful (when earned)</div>
+      <div class="voice-card-body">
+        <div class="voice-item"><span class="sym yes">✓</span> Humor lands when it fits: "The CRM that configures itself."</div>
+        <div class="voice-item"><span class="sym no">✗</span> No jokes in error states, billing, or stressful moments.</div>
+        <div class="voice-item"><span class="sym no">✗</span> Wit must land instantly — no humor that needs context.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">Tropes to Avoid</div>
+  <div class="trope-grid">
+    <div class="trope"><div class="trope-head">Em dash as drama</div><div class="trope-body"><div class="trope-bad"><span>✗</span> Clarify is more than a CRM — it's a movement.</div><div class="trope-good"><span>✓</span> Clarify is more than a CRM. It's how great founders sell.</div></div></div>
+    <div class="trope"><div class="trope-head">"Leverage" as default</div><div class="trope-body"><div class="trope-bad"><span>✗</span> Leverage AI to accelerate your pipeline velocity.</div><div class="trope-good"><span>✓</span> Use AI to close deals faster.</div></div></div>
+    <div class="trope"><div class="trope-head">"In today's world"</div><div class="trope-body"><div class="trope-bad"><span>✗</span> In today's fast-paced sales environment...</div><div class="trope-good"><span>✓</span> Sales moves fast. Your CRM should keep up.</div></div></div>
+    <div class="trope"><div class="trope-head">Hollow affirmations</div><div class="trope-body"><div class="trope-bad"><span>✗</span> "Great question!" "Absolutely!" "Certainly!"</div><div class="trope-good"><span>✓</span> Just answer. No compliment needed.</div></div></div>
+  </div>
+
+  <div class="sub-label">Tone Guide</div>
+  <table class="tone-table">
+    <thead><tr><th>Tone</th><th>Use For</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Direct + Functional</strong></td><td>Product UI, microcopy, tooltips, release notes, error messages</td></tr>
+      <tr><td><strong>Confident + Empowering</strong></td><td>Homepage hero, feature announcements, sales decks, email subjects</td></tr>
+      <tr><td><strong>Warm + Collaborative</strong></td><td>Customer stories, support, community posts, nurture sequences</td></tr>
+      <tr><td><strong>Ambitious + Aspirational</strong></td><td>Investor decks, keynotes, about page, job descriptions</td></tr>
+      <tr><td><strong>Witty + Sharp</strong></td><td>LinkedIn, social copy, ad copy, event titles, referral campaigns</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-label">Copy Examples</div>
+  <div class="two-col">
+    <div>
+      <div class="lb"><div class="lb-head">Hero Headlines</div><div class="lb-body" style="line-height:2">• Less CRMing. More selling.<br/>• The CRM that works while you sleep.<br/>• Every deal, briefed. Every follow-up, sent.<br/>• Close more. Type less.</div></div>
+      <div class="lb"><div class="lb-head">Email Subject Lines</div><div class="lb-body" style="line-height:2">• Rep just briefed your next 3 calls<br/>• Your pipeline updated itself (no, really)<br/>• How Dimmo closed more without HubSpot<br/>• Meet the CRM that does the annoying part</div></div>
+    </div>
+    <div>
+      <div class="lb"><div class="lb-head">Feature Copy</div><div class="lb-body" style="line-height:2">• Rep: The prep you'd do, if you had time<br/>• Enrichment: Every gap, filled automatically<br/>• Pipeline AI: New deals detected. None neglected.<br/>• Self-config: Name a field. AI does the rest.</div></div>
+      <div class="lb"><div class="lb-head">CTA Copy — Always Sentence Case</div><div class="lb-body" style="line-height:2">• Start for free<br/>• Talk to sales<br/>• Get to know Rep →<br/>• See it in action →</div></div>
+    </div>
+  </div>
+
+  <div class="sub-label" style="margin-top:32px">Copy Rules</div>
+  <div class="code-block"><pre><span class="c">/* Clarify Copy Rules */</span>
+
+✓  Sentence case: <span class="s">"Start for free"</span> not <span class="s">"Start For Free"</span>
+✓  Oxford comma: <span class="s">"calls, emails, and pipeline"</span>
+✓  En dash for ranges: <span class="s">"3–5 minutes"</span>
+✓  Product names capitalized: Clarify, Rep, Pipeline AI
+
+✓  CTAs: short imperatives, sentence case
+   <span class="s">"Start for free"</span>  <span class="s">"Get to know Rep →"</span>  <span class="s">"See it live →"</span>
+   ✗ Not: <span class="s">"Click here to learn more about our platform"</span>
+
+✗  Never: <span class="s">"robust"</span>, <span class="s">"synergize"</span>, <span class="s">"leverage"</span>, <span class="s">"comprehensive"</span>
+✗  Never start with: <span class="s">"We are excited to announce..."</span>
+✗  No hollow affirmations</pre></div>
+</section>
+
+</main>
+</body>
+</html>
